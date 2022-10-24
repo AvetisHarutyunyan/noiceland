@@ -1,0 +1,180 @@
+#latest__section {
+    padding-top: 90px;
+
+    .latest__container {
+        border-top: 1px solid #E6E6E6;
+
+        .light_title {
+            margin-top: 90px;
+            margin-bottom: 30px;
+        }
+
+        .latest__items {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 50px 20px;
+
+            @media screen and (max-width: 920px) {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            @media screen and (max-width: 740px) {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @media screen and (max-width: 540px) {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .latest__item {
+                max-width: 285px;
+
+                @media screen and (max-width: 740px) {
+                    max-width: 100%;
+                }
+
+                img {
+                    width: 100%;
+                }
+
+                .light_title {
+                    margin-top: 25px;
+                }
+
+                .info_text {
+                    margin-top: 18px;
+
+                    @media screen and (max-width: 1070px) {
+                        font-size: 16px;
+                        font-weight: 700;
+                    }
+                }
+
+                .by {
+                    margin-top: 15px;
+                }
+            }
+        }
+
+        .latest__btn {
+            margin-top: 90px;
+            text-align: center;
+
+            .btn {
+                font-size: 12px;
+                text-transform: uppercase;
+                font-family: $franklinFont;
+                font-weight: 400;
+                padding: 21px 26px;
+                letter-spacing: 1px;
+                color: $blackColor;
+                border: 1px solid $blackColor;
+                transition: .3s ease;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 0;
+                    height: 100%;
+                    background-color: $smallTitleColor;
+                    z-index: -1;
+                    transition: .1s ease;
+                }
+
+                &:hover {
+                    color: #ffffff;
+
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#featured__section {
+    padding-top: 90px;
+
+    .featured__container {
+        border-top: 1px solid #E6E6E6;
+
+        .light_title {
+            margin-top: 90px;
+        }
+
+        .featured__items {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 50px 20px;
+
+            @media screen and (max-width: 540px) {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .featured_item {
+                max-width: 590px;
+
+                @media screen and (max-width: 540px) {
+                    max-width: 100%;
+                }
+
+                img {
+                    width: 100%;
+                }
+
+                .light_title {
+                    margin-top: 25px;
+                }
+
+                .info_text {
+                    margin-top: 18px;
+
+                    @media screen and (max-width: 740px) {
+                        font-size: 16px;
+                        font-weight: 700;
+                    }
+                }
+
+                .by {
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+}
+
+#toTopBtn {
+    position: fixed;
+    top: 120%;
+    right: 1.2%;
+    z-index: 9000;
+    transition: .3s ease;
+
+    &.toUpBtnActive {
+        top: 88%;
+    }
+
+    a {
+        fill: $blackColor;
+        border: 1px solid $blackColor;
+        padding: 10px;
+        width: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .3s ease;
+
+        &:hover {
+            background-color: $smallTitleColor;
+        }
+    }
+}
