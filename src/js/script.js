@@ -3,11 +3,12 @@ window.addEventListener("DOMContentLoaded", () => {
     const darkMode = document.body;
     const toggleText = document.querySelector(".darkTheme_text");
 
-    let local = localStorage.getItem("dark");
 
     modToggle.forEach(item => {
 
-        if (local === "enabled") {
+        let localTheme = localStorage.getItem("dark");
+
+        if(localTheme === "enabled") {
             item.classList.add("toggleActive");
             darkMode.classList.add("darkMode");
             toggleText.textContent = "Light Mode";
@@ -22,27 +23,27 @@ window.addEventListener("DOMContentLoaded", () => {
                 item.classList.add("toggleActive");
                 darkMode.classList.add("darkMode");
                 toggleText.textContent = "Light Mode";
+
+                localStorage.setItem("dark", "enabled")
             } else {
                 item.classList.remove("toggleActive");
                 darkMode.classList.remove("darkMode");
                 toggleText.textContent = "Dark Mode";
+
+                localStorage.setItem("dark", "disabled")
             }
 
-            local = localStorage.getItem("dark");
-            if (local === "disabled") {
+            localTheme = localStorage.getItem("dark")
+
+            if(localTheme === "enabled") {
                 item.classList.add("toggleActive");
                 darkMode.classList.add("darkMode");
                 toggleText.textContent = "Light Mode";
-
-                localStorage.setItem("dark", "enabled");
             } else {
                 item.classList.remove("toggleActive");
                 darkMode.classList.remove("darkMode");
                 toggleText.textContent = "Dark Mode";
-
-                localStorage.setItem("dark", "disabled");
             }
-
         });
     });
 
