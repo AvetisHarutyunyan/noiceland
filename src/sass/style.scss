@@ -32,8 +32,6 @@ html {
 }
 
 body {
-    transition: .3s ease;
-
     &.darkMode {
         background-color: $darkModeColor;
         color: $whiteColor;
