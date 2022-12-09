@@ -8,7 +8,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         let localTheme = localStorage.getItem("dark");
 
-        if(localTheme === "enabled") {
+        if (localTheme === "enabled") {
             item.classList.add("toggleActive");
             darkMode.classList.add("darkMode");
             toggleText.textContent = "Light Mode";
@@ -33,17 +33,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 localStorage.setItem("dark", "disabled")
             }
 
-            localTheme = localStorage.getItem("dark")
-
-            if(localTheme === "enabled") {
-                item.classList.add("toggleActive");
-                darkMode.classList.add("darkMode");
-                toggleText.textContent = "Light Mode";
-            } else {
-                item.classList.remove("toggleActive");
-                darkMode.classList.remove("darkMode");
-                toggleText.textContent = "Dark Mode";
-            }
+            localTheme = localStorage.getItem("dark");
         });
     });
 

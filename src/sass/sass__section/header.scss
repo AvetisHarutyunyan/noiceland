@@ -89,7 +89,7 @@
                 .darkThemeBtn {
                     cursor: pointer;
                     width: 55px;
-                    height: 23px;
+                    height: 27px;
                     background-color: #141414;
                     border-radius: 15px;
                     position: relative;
@@ -97,25 +97,42 @@
                     .circle {
                         position: absolute;
                         top: 49%;
-                        left: 21%;
+                        left: 23%;
                         transform: translate(-50%, -50%);
-                        background-color: #fff;
+                        background-color: rgb(255, 225, 58);
                         width: 22px;
                         height: 22px;
                         border-radius: 50%;
                         border: 1px solid rgb(51, 51, 51);
                         transition: .2s ease;
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            top: 40%;
+                            right: -80%;
+                            transform: translate(-50%, -50%);
+                            background-color: #141414;
+                            width: 20px;
+                            height: 20px;
+                            border-radius: 50%;
+                            transition: .1s ease;
+                        }
                     }
 
                     &.toggleActive {
                         .circle {
-                            left: 79%;
+                            left: 77%;
+
+                            &::after {
+                                opacity: 0;
+                            }
                         }
                     }
 
                     .darkTheme_text {
                         width: 90px;
-                        padding-top: 25px;
+                        padding-top: 28px;
                         font-size: 11px;
                         font-family: $serifProFont;
                         font-weight: 400;
@@ -144,6 +161,10 @@
         cursor: pointer;
         padding: 10px;
 
+        @media screen and (max-width: 540px) {
+            display: block;
+        }
+
         &.close .bar1 {
             transform: rotate(45deg) translate(6px, 6px);
         }
@@ -155,10 +176,6 @@
         &.close .bar3 {
             transform: rotate(-406deg) translate(8px, -7px);
             transition-delay: .1s;
-        }
-
-        @media screen and (max-width: 540px) {
-            display: block;
         }
     }
 
@@ -224,7 +241,7 @@
             .darkThemeBtn {
                 cursor: pointer;
                 width: 55px;
-                height: 23px;
+                height: 27px;
                 background-color: #313131;
                 border-radius: 15px;
                 position: relative;
@@ -232,19 +249,36 @@
                 .circle {
                     position: absolute;
                     top: 49%;
-                    left: 21%;
+                    left: 23%;
                     transform: translate(-50%, -50%);
-                    background-color: #fff;
+                    background-color: rgb(255, 225, 58);
                     width: 22px;
                     height: 22px;
                     border-radius: 50%;
                     border: 1px solid rgb(51, 51, 51);
                     transition: .2s ease;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 40%;
+                        right: -80%;
+                        transform: translate(-50%, -50%);
+                        background-color: #313131;
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 50%;
+                        transition: .1s ease;
+                    }
                 }
 
                 &.toggleActive {
                     .circle {
-                        left: 79%;
+                        left: 77%;
+
+                        &::after {
+                            opacity: 0;
+                        }
                     }
                 }
             }
