@@ -1,3 +1,5 @@
+"use strict";
+
 window.addEventListener("scroll", () => {
     const navbar = document.querySelector(".header__section");
     const navPosition = document.querySelector(".navside");
